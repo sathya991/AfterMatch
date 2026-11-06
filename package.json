@@ -1,0 +1,14 @@
+{
+  "name": "aftermatch",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A Dota 2 match detective for exploring events and learning from your own games.",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

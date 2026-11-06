@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a1018">
+  <meta name="description" content="AfterMatch turns Dota 2 match data into a timeline you can explore. Find a pattern, save a lesson, and return to the next game.">
+  <title>AfterMatch — Dota Match Detective</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="icon" href="./mark.svg" type="image/svg+xml">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="./" aria-label="AfterMatch home"><img src="./mark.svg" alt="" width="34" height="34"><span>AFTER<span class="brand-light">MATCH</span><small>DOTA MATCH DETECTIVE</small></span></a>
+      <div class="nav-label">THE REVIEW ROOM</div>
+      <nav aria-label="Main navigation">
+        <a class="nav-link active" href="#overview"><span>◈</span> Match review <i>01</i></a>
+        <a class="nav-link" href="#coaching"><span>◎</span> Next-game plan</a>
+        <a class="nav-link" href="#timeline"><span>⌁</span> Timeline</a>
+        <a class="nav-link" href="#comparison"><span>⇄</span> Your baseline</a>
+        <a class="nav-link" href="#notebook"><span>✎</span> Field notes <b id="notes-count">0</b></a>
+      </nav>
+      <div class="sidebar-divider"></div>
+      <div class="nav-label">YOUR NEXT GAME STARTS HERE</div>
+      <div class="sidebar-message"><div class="small-orbit"><span></span></div><p>One match.<br>One lesson.<br><strong>A better next game.</strong></p></div>
+      <div class="sidebar-bottom"><span class="live-dot"></span> Powered by OpenDota<a href="https://www.opendota.com/" target="_blank" rel="noreferrer">View data source ↗</a></div>
+    </aside>
+    <main>
+      <header class="topbar"><div><span class="breadcrumb">WORKSPACE</span><span class="breadcrumb-separator">/</span><strong>Match review</strong></div><span class="version"><span class="live-dot"></span> V0.1 · FIRST BLOOD</span></header>
+      <div class="content">
+        <section class="page-heading" id="overview">
+          <div><p class="eyebrow">THE ANCIENT FELL. THE LEARNING BEGINS.</p><h1>Every match leaves clues<span>.</span></h1><p class="subtitle">Find a focus. Practice it next game. Check what changes.</p></div>
+          <div class="rank-emblem" aria-hidden="true"><span>AM</span></div>
+        </section>
+        <section class="load-panel" aria-label="Load match">
+          <form id="match-form"><label for="match-id">MATCH ID</label><div class="input-group"><span aria-hidden="true">#</span><input id="match-id" name="match" inputmode="numeric" pattern="[0-9]{1,16}" placeholder="Enter a public match ID" aria-describedby="match-help"><button type="submit" id="load-button">Investigate <span>↗</span></button></div></form>
+          <div class="load-actions"><span>or explore</span><button type="button" class="secondary" id="demo-button">Sample match <span>→</span></button><label class="import-label" for="json-file">Import JSON ↑</label><input type="file" id="json-file" accept=".json,application/json" hidden></div>
+          <p id="match-help">Find your match ID in Dota 2’s match details. Advanced timeline data depends on replay availability.</p>
+        </section>
+        <div id="status" role="status" aria-live="polite"></div>
+        <div id="match-content" aria-busy="true"><div class="initial-loading">Opening the review room…</div></div>
+        <footer class="footer"><span>AFTERMATCH <span class="muted">/</span> BUILT FOR THE NEXT GAME</span><span>Independent Dota 2 project · Match data via <a href="https://www.opendota.com/" target="_blank" rel="noreferrer">OpenDota ↗</a></span></footer>
+      </div>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
